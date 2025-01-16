@@ -1,0 +1,34 @@
+#main {
+  background-image: url("/src/assets/qavo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  height: calc(100vh - 63px);
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    color: white;
+    font-size: 80px;
+    font-weight: 400;
+
+    span {
+      color: #7E7E7E;
+    }
+  }
+
+  h2:first-child {
+    margin-top: 60px;
+  }
+
+  @media screen and (max-width: 992px) {
+    height: 50vh;
+    h2 {
+      font-size: 35px;
+    }
+
+    h2:first-child {
+      margin-top: -30px;
+    }
+  }
+}

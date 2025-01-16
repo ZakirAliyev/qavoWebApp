@@ -1,0 +1,38 @@
+#banner {
+  color: white;
+  height: calc(100vh - 63px - 90px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  iframe {
+    max-width: 90%;
+    height: 600px;
+    border-radius: 30px;
+  }
+
+  .button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      margin-top: 30px;
+      width: 300px;
+      background-color: white;
+      color: black;
+      padding: 16px;
+      font-size: 20px;
+      border-radius: 15px;
+      font-weight: bold;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    iframe {
+      height: 200px;
+    }
+  }
+}

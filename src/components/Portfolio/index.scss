@@ -1,0 +1,81 @@
+#portfolio {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 0;
+  background-image: url("/src/assets/neis.png");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: contain;
+  height: 85vh;
+
+  .line {
+    width: 50px;
+    height: 1px;
+    background-color: white;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    color: white;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .row {
+    justify-content: end;
+  }
+
+  .png {
+    width: 180px;
+    object-fit: cover;
+    margin-top: 100px;
+  }
+
+  .boxWrapper {
+    position: absolute;
+    margin-top: 100px;
+
+    .box {
+      color: white;
+
+      img {
+        width: 100%;
+        aspect-ratio: 1/.7;
+        object-fit: cover;
+      }
+
+      .dotWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      h3, h4 {
+        font-weight: 400;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      h3 {
+        font-size: 24px;
+      }
+
+      h4 {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    position: relative;
+
+    height: 100vh;
+
+    .boxWrapper {
+      margin-bottom: 100px;
+    }
+  }
+}

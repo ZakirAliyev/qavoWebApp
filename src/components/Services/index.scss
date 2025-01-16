@@ -1,0 +1,42 @@
+#services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 100px 0;
+
+  h2 {
+    color: white;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 100px;
+  }
+
+  .line {
+    width: 50px;
+    height: 1px;
+    background-color: white;
+    margin-bottom: 30px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+
+    .col-2 {
+      .box {
+        background-color: white;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

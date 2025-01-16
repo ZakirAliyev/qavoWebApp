@@ -1,0 +1,38 @@
+#openScene {
+  background-color: black;
+  padding: 8px 16px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: -30px;
+
+    img {
+      max-width: 700px;
+      width: 100%;
+    }
+  }
+
+  animation: slideFadeOut 1.5s ease forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes slideFadeOut {
+  from {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+  to {
+    opacity: 0;
+    clip-path: inset(0 0 0 0);
+  }
+}

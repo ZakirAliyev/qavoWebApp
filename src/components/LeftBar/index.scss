@@ -1,0 +1,34 @@
+#leftBar {
+  color: white;
+  position: fixed;
+  height: max-content;
+  width: 80px;
+  display: flex;
+  margin-top: 80px;
+
+  .logo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .menu {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+
+    a {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      color: white;
+      text-decoration: none;
+      rotate: 180deg;
+    font-size: 17px;
+
+      &:hover {
+        color: orange;
+      }
+    }
+  }
+}
