@@ -1,6 +1,6 @@
 #banner {
   color: white;
-  height: calc(100vh - 63px - 90px);
+  height: calc(100vh);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,6 +10,10 @@
     max-width: 90%;
     height: 600px;
     border-radius: 30px;
+    transition: all .4s ease;
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 
   .button {
@@ -33,6 +37,18 @@
   @media screen and (max-width: 992px) {
     iframe {
       height: 200px;
+      max-width: 100%;
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .button {
+      button {
+        font-size: 16px;
+        padding: 8px 16px;
+        max-width: 200px;
+        width: 100%;
+      }
     }
   }
 }

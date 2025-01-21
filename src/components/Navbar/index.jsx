@@ -3,9 +3,17 @@ import {Link} from "react-router";
 import {FaBars, FaSearch} from "react-icons/fa";
 import MiniDot from "../MiniDot/index.jsx";
 import {TfiLayoutLineSolid} from "react-icons/tfi";
-import {HiBars3BottomLeft} from "react-icons/hi2";
+import {useState} from "react";
+import {RxCrossCircled} from "react-icons/rx";
+import BurgerMenu from "../BurgerMenu/index.jsx";
+import image1 from "/src/assets/logo.png"
 
 function Navbar() {
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const openModal = () => setModalOpen(true);
+    const closeModal = () => setModalOpen(false);
+
     return (
         <section id={"navbar"}>
             <div className={"container"}>
@@ -20,24 +28,31 @@ function Navbar() {
                         <MiniDot/>
                     </div>
                     <div className={"logo"}>
-                        <img src={"/src/assets/logo.png"} alt={"Logo"}/>
+                        <img src={image1} alt={"Logo"}/>
                     </div>
-                    <div className={"menu"}>
+                    <div className={"menu"} onClick={openModal}>
                         <FaSearch className={"span"}/>
                         <TfiLayoutLineSolid style={{
                             transform: "rotate(-90deg)",
                             fontSize: '18px'
                         }}/>
-                        <div className={"wrapper"} style={{
-                            gap: '10px'
-                        }}>
-                            <span className={"span"}>MENYU</span>
-                            <HiBars3BottomLeft className={"span"}/>
-                        </div>
+                        <span className={"span"}>AXTAR</span>
                     </div>
-                    <FaBars className={"menu2"}/>
+                    <BurgerMenu className={"menu2"}/>
                 </div>
             </div>
+
+            {/* Modal */}
+            {isModalOpen && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <button className="close-btn" onClick={closeModal}>
+                            <RxCrossCircled className={"icon"}/>
+                        </button>
+                        <input placeholder={"Axtar..."}/>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }

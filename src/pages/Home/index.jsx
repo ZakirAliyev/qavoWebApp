@@ -1,5 +1,5 @@
 import './index.scss';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Navbar from "../../components/Navbar/index.jsx";
 import OpenScene from "../../components/OpenScene/index.jsx";
 import Banner from "../../components/Banner/index.jsx";
@@ -10,22 +10,30 @@ import Main from "../../components/Main/index.jsx";
 import MiniDot1 from "../../components/MiniDot1/index.jsx";
 import Portfolio from "../../components/Portfolio/index.jsx";
 import AnimatedCursor from "react-animated-cursor";
-// import * as cursoreffects from "cursor-effects";
-// new cursoreffects.followingDotCursor({ color: ["#5B0C66"] });
+import video1 from "/src/assets/video.mp4"
 
 function Home() {
     const [showOpenScene, setShowOpenScene] = useState(true);
     const [opacity, setOpacity] = useState(0);
 
+    useEffect(() => {
+        const audio = document.getElementById("background-audio");
+        if (audio) {
+            audio.loop = true;
+            audio.play()
+        }
+    }, []);
+
+
     return (
         <section id="home">
             <AnimatedCursor
-                innerSize={8} // İç halka boyutu
-                outerSize={40} // Dış halka boyutu
-                color="255,255,255, 0" // RGB renk
-                outerAlpha={0.3} // Dış halkanın opaklığı
-                innerScale={1} // İç halkanın ölçeği (hover etkisi için)
-                outerScale={2} // Dış halkanın ölçeği (hover etkisi için)
+                innerSize={8}
+                outerSize={40}
+                color="255,255,255, 0"
+                outerAlpha={0.3}
+                innerScale={1}
+                outerScale={2}
                 outerStyle={{
                     border: "2px solid rgb(255,255,255)",
                     borderRadius: "50%",
@@ -56,49 +64,21 @@ function Home() {
                             color: '255, 255, 255',
                             outerAlpha: 0.3,
                             innerScale: 0.7,
-                            outerScale: 5
-                        }
-                    }
+                            outerScale: 5,
+                        },
+                    },
                 ]}
             />
             <video autoPlay muted loop id="background-video">
-                <source src="/src/assets/video.mp4" type="video/mp4"/>
+                <source src={video1} type="video/mp4"/>
                 Sizin brauzeriniz video tagını dəstəkləmir.
             </video>
-            <div className="whiteBanner">
-                <div style={{
-                    display: 'flex',
-                    alignItems: 'center'
-                }}>
-                    kreativ dizayn
-                    <MiniDot1/> ui/ux <MiniDot1/> marketing <MiniDot1/> dijitallaşma <MiniDot1/> brendinq <MiniDot1/>
-                    e-ticarət <MiniDot1/>
-                </div>
-                <div style={{
-                    display: 'flex',
-                    alignItems: 'center'
-                }}>
-                    kreativ dizayn
-                </div>
-            </div>
-            <div className="blackBanner">
-                <div style={{
-                    display: 'flex',
-                    alignItems: 'center'
-                }}>
-                    kreativ dizayn
-                    <MiniDot1/> ui/ux <MiniDot1/> marketing <MiniDot1/> dijitallaşma <MiniDot1/> brendinq <MiniDot1/>
-                    e-ticarət <MiniDot1/>
-                </div>
-                <div style={{
-                    display: 'flex',
-                    alignItems: 'center'
-                }}>
-                    kreativ dizayn
-                    <MiniDot1/> ui/ux <MiniDot1/> marketing <MiniDot1/> dijitallaşma <MiniDot1/> brendinq <MiniDot1/>
-                    e-ticarət <MiniDot1/>
-                </div>
-            </div>
+            <audio id="background-audio">
+                <source
+                    src="https://exposite-001-site1.ntempurl.com/files/pictures/85098dd6-f600-4b0d-a7b3-bcafbc092aa8.mp3"
+                    type="audio/mpeg"
+                />
+            </audio>
             <div className="container">
                 <Navbar style={{opacity}}/>
                 <div className="row" style={{marginTop: '80px'}}>
@@ -113,7 +93,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                {/*{showOpenScene && <OpenScene/>}*/}
+                {showOpenScene ? <OpenScene/> : <></>}
             </div>
         </section>
     );

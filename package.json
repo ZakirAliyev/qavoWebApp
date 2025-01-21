@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "antd": "^5.23.2",
     "clsx": "^2.1.1",
     "cursor-effects": "^1.0.17",
     "framer-motion": "^11.18.0",

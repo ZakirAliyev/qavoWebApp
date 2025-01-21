@@ -2,7 +2,7 @@ import './index.scss';
 import {FaWhatsapp} from "react-icons/fa";
 import {HiOutlineMail} from "react-icons/hi";
 import {SiCalendly} from "react-icons/si";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 function Contact() {
     const [activeIndex, setActiveIndex] = useState(null);

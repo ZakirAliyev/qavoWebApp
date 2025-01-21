@@ -6,6 +6,75 @@
   height: calc(100vh - 63px);
   display: flex;
   flex-direction: column;
+  position: relative;
+
+  .whiteBanner {
+    background-color: white;
+    position: absolute;
+    width: 200%;
+    rotate: 40deg;
+    right: -70%;
+    height: 100px;
+    color: #212121;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-transform: uppercase;
+    z-index: 100;
+  }
+
+  .blackBanner {
+    background-color: #212121;
+    position: absolute;
+    width: 200%;
+    rotate: -15deg;
+    height: 100px;
+    top: 500px;
+    color: white;
+    left: -500px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-transform: uppercase;
+    z-index: 100;
+  }
+  @media screen and (max-width: 992px) {
+    .whiteBanner {
+      margin-top: 50px;
+      background-color: white;
+      position: absolute;
+      width: 140%; /* Mobilde genişlik ayarı optimize edildi */
+      rotate: 20deg;
+      right: -20%; /* Sağ kenara oturması için optimize edildi */
+      top: 50%;
+      height: 50px;
+      color: #212121;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      text-transform: uppercase;
+    }
+
+    .blackBanner {
+      margin-top: 50px;
+      background-color: #212121;
+      position: absolute;
+      width: 140%; /* Mobilde genişlik ayarı optimize edildi */
+      rotate: -20deg;
+      left: -20%; /* Sol kenara oturması için optimize edildi */
+      top: 50%;
+      height: 50px;
+      color: white;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      text-transform: uppercase;
+    }
+  }
 
   h2 {
     color: white;
