@@ -42,7 +42,7 @@
   }
   @media screen and (max-width: 992px) {
     .whiteBanner {
-      margin-top: 50px;
+      margin-top: 100px;
       background-color: white;
       position: absolute;
       width: 140%; /* Mobilde genişlik ayarı optimize edildi */
@@ -59,7 +59,7 @@
     }
 
     .blackBanner {
-      margin-top: 50px;
+      margin-top: 100px;
       background-color: #212121;
       position: absolute;
       width: 140%; /* Mobilde genişlik ayarı optimize edildi */
@@ -97,7 +97,7 @@
     }
 
     h2:first-child {
-      margin-top: -30px;
+      margin-top: -15px;
     }
   }
 }

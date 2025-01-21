@@ -5,12 +5,16 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  top: 50px;
+
 
   iframe {
     max-width: 90%;
     height: 600px;
     border-radius: 30px;
     transition: all .4s ease;
+
     &:hover {
       transform: scale(1.02);
     }

@@ -303,6 +303,10 @@ body {
     background: #0DA5B5;
 }
 
+:where(.css-1htoz2s).ant-drawer .ant-drawer-close {
+    color: white;
+}
+
 .burgerMenu {
     display: none;
 }
