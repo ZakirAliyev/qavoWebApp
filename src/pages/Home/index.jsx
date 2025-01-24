@@ -7,7 +7,6 @@ import LeftBar from "../../components/LeftBar/index.jsx";
 import Services from "../../components/Services/index.jsx";
 import Contact from "../../components/Contact/index.jsx";
 import Main from "../../components/Main/index.jsx";
-import MiniDot1 from "../../components/MiniDot1/index.jsx";
 import Portfolio from "../../components/Portfolio/index.jsx";
 import AnimatedCursor from "react-animated-cursor";
 import video1 from "/src/assets/video.mp4"
