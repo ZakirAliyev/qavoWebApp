@@ -1,18 +1,14 @@
 import './index.scss';
-import {FaWhatsapp} from "react-icons/fa";
-import {HiOutlineMail} from "react-icons/hi";
-import {SiCalendly} from "react-icons/si";
-import {useState} from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+import { SiCalendly } from "react-icons/si";
+import { useState } from "react";
 
 function Contact() {
     const [activeIndex, setActiveIndex] = useState(null);
 
     const handleHover = (index) => {
         setActiveIndex(index);
-        if (index !== activeIndex) {
-            setActiveIndex(index);
-            boxClasses()
-        }
     };
 
     const handleMouseLeave = () => {
@@ -32,38 +28,40 @@ function Contact() {
                 <div className="box">
                     <div className="row">
                         {[FaWhatsapp, HiOutlineMail, SiCalendly].map((Icon, index) => (
-                            <>
-                                <div
-                                    key={index}
-                                    className={boxClasses(index)}
-                                    onMouseEnter={() => handleHover(index)}
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    <div className="box1">
-                                        <a href={
-                                            activeIndex === 0
+                            <div
+                                key={index}
+                                className={boxClasses(index)}
+                                onMouseEnter={() => handleHover(index)}
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                <div className="box1">
+                                    <a
+                                        href={
+                                            index === 0
                                                 ? 'https://wa.me/1234567890'
-                                                : activeIndex === 1
+                                                : index === 1
                                                     ? 'mailto:example@example.com'
-                                                    : activeIndex === 2
+                                                    : index === 2
                                                         ? 'https://calendly.com/example'
                                                         : '#'
-                                        } target="_blank" rel="noopener noreferrer">
-                                            <Icon className="icon"/>
-                                            <span>
-                                                {index === 0
-                                                    ? 'WhatsApp'
-                                                    : index === 1
-                                                        ? 'Email'
-                                                        : index === 2
-                                                            ? 'Calendly'
-                                                            : ''}
-                                            </span>
-                                        </a>
-                                    </div>
-
+                                        }
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={activeIndex === index ? "" : "disabled-link"}
+                                    >
+                                        <Icon className="icon" />
+                                        <span>
+                                            {index === 0
+                                                ? 'WhatsApp'
+                                                : index === 1
+                                                    ? 'Email'
+                                                    : index === 2
+                                                        ? 'Calendly'
+                                                        : ''}
+                                        </span>
+                                    </a>
                                 </div>
-                            </>
+                            </div>
                         ))}
                     </div>
                 </div>

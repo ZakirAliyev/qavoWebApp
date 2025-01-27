@@ -5,6 +5,11 @@
   margin: 100px 0 0;
   height: calc(100vh - 150px);
 
+  .disabled-link {
+    pointer-events: none;
+  }
+
+
   @keyframes fadeIn {
     from {
       opacity: 0;
