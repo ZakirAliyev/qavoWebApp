@@ -1,0 +1,66 @@
+#footer {
+  width: 100%;
+  padding-left: 100px;
+  margin: 100px 0 0;
+  padding-bottom: 16px;
+  color: white;
+  background-color: black;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+
+  p {
+    margin-top: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    a {
+      color: white;
+      width: 100px;
+    }
+  }
+
+  .icon {
+    color: white;
+    font-size: 14px;
+    transition: all .4s ease;
+
+    &:hover {
+      rotate: -45deg;
+    }
+  }
+
+
+  .box {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      max-width: 150px;
+      width: 100%;
+      margin-top: 30px;
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 10px 0;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+
+    img {
+      padding-top: 30px;
+      max-width: 250px;
+      width: 100%;
+    }
+  }
+
+  .span {
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  @media screen and (max-width: 992px) {
+    padding: 16px;
+  }
+}

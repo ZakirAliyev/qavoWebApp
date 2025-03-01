@@ -31,8 +31,9 @@ video {
     margin: 0 auto;
 }
 
-body {
-    background-image: url('/src/assets/video.mp4');
+.container1 {
+    max-width: 1240px;
+    margin: 0 auto;
 }
 
 .row {

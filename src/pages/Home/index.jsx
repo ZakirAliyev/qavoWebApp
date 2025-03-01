@@ -1,5 +1,5 @@
 import './index.scss';
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import Navbar from "../../components/Navbar/index.jsx";
 import OpenScene from "../../components/OpenScene/index.jsx";
 import Banner from "../../components/Banner/index.jsx";
@@ -9,30 +9,42 @@ import Contact from "../../components/Contact/index.jsx";
 import Main from "../../components/Main/index.jsx";
 import Portfolio from "../../components/Portfolio/index.jsx";
 import AnimatedCursor from "react-animated-cursor";
-import video1 from "/src/assets/video.mp4";
+import video1 from "/src/assets/video.webm";
+import {Helmet} from "react-helmet-async";
+import image1 from "/src/assets/miniLogo.png"
+import Footer from "../../components/Footer/index.jsx";
 
 function Home() {
     const [showOpenScene, setShowOpenScene] = useState(true);
     const [opacity, setOpacity] = useState(0);
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
-        // Mobil cihazları müəyyən etmək üçün bir metod
-        const checkMobile = () => {
+        const handleResize = () => {
             setIsMobile(window.innerWidth <= 768);
         };
 
-        checkMobile(); // İlk dəfə işlətmək üçün çağırırıq
-        window.addEventListener("resize", checkMobile); // Pəncərə ölçüsü dəyişəndə yeniləyir
+        const debounceResize = debounce(handleResize, 200); // Debounced to optimize performance
+        window.addEventListener("resize", debounceResize);
 
         const audio = document.getElementById("background-audio");
         if (audio) {
             audio.loop = true;
-            audio.play();
+            audio.play().catch((err) => {
+                console.warn("Autoplay prevented by browser:", err);
+            });
         }
 
-        return () => window.removeEventListener("resize", checkMobile); // Təmizləmə
+        return () => window.removeEventListener("resize", debounceResize);
     }, []);
+
+    const debounce = (func, delay) => {
+        let timeout;
+        return (...args) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func(...args), delay);
+        };
+    };
 
     return (
         <section id="home">
@@ -80,32 +92,38 @@ function Home() {
                     ]}
                 />
             )}
-            <video autoPlay muted loop id="background-video">
-                <source src={video1} type="video/mp4" />
-                Sizin brauzeriniz video tagını dəstəkləmir.
+            <video autoPlay muted loop id="background-video" style={{width: '100%', height: '100vh'}}>
+                <source src={video1} type="video/webm"/>
+                Your browser does not support the video tag.
             </video>
+            <Helmet>
+                <title>QAVO - Rəqəmsal marketing agentliyi</title>
+                <link rel="icon" type={"image/png"} href={image1}/>
+            </Helmet>
             <audio id="background-audio">
                 <source
                     src="https://exposite-001-site1.ntempurl.com/files/pictures/85098dd6-f600-4b0d-a7b3-bcafbc092aa8.mp3"
                     type="audio/mpeg"
                 />
+                Your browser does not support the audio tag.
             </audio>
             <div className="container">
-                <Navbar style={{ opacity }} />
-                <div className="row" style={{ marginTop: '80px' }}>
-                    <LeftBar />
+                <Navbar style={{opacity}}/>
+                <div className="row" style={{marginTop: '80px'}}>
+                    <LeftBar/>
                     <div className="col-11 col-md-12 col-sm-12 col-xs-12">
                         <div className="row">
-                            <Main />
-                            <Banner />
-                            <Portfolio />
-                            <Services />
-                            <Contact />
+                            <Main/>
+                            <Banner/>
+                            <Portfolio/>
+                            <Services/>
+                            <Contact/>
                         </div>
                     </div>
                 </div>
-                {showOpenScene ? <OpenScene /> : <></>}
+                {showOpenScene && <OpenScene/>}
             </div>
+            <Footer/>
         </section>
     );
 }

@@ -47,7 +47,9 @@ export default function BurgerMenu() {
 
     return (
         <div className={" burgerMenu"}>
-            <Button className={" gizli"} onClick={toggleDrawer(true)}><FaBars className={" menuIcon"}/></Button>
+            <Button className={"gizli"} style={{
+                backgroundColor: 'transparent'
+            }} onClick={toggleDrawer(true)}><FaBars className={"menuIcon"}/></Button>
             <Drawer headerStyle={{
                 backgroundColor: 'black',
                 color: 'white',
