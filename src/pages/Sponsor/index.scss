@@ -1,0 +1,53 @@
+#logoScroll {
+  padding: 0 0 50px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 10px 0;
+    position: relative;
+    white-space: nowrap;
+
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      height: 70px;
+      object-fit: contain;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      color: black;
+      padding: 0 20px;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+
+      img {
+        width: 100%;
+      aspect-ratio: 16/9;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .left {
+    animation: scrollLeft 80s linear infinite;
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

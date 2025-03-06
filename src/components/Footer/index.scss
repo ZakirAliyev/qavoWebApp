@@ -15,19 +15,30 @@
     align-items: center;
     gap: 40px;
 
+    &:hover {
+      a {
+        color: #c332c3;
+      }
+
+      .icon {
+        rotate: 0deg;
+        font-size: 17px;
+      }
+
+    }
+
+    .icon {
+      color: white;
+      font-size: 14px;
+      transition: all .4s ease;
+
+      rotate: -45deg;
+    }
+
     a {
+      transition: all .2s ease;
       color: white;
       width: 100px;
-    }
-  }
-
-  .icon {
-    color: white;
-    font-size: 14px;
-    transition: all .4s ease;
-
-    &:hover {
-      rotate: -45deg;
     }
   }
 
@@ -42,10 +53,16 @@
       margin-top: 30px;
       background-color: white;
       color: black;
-      border: none;
       padding: 10px 0;
       border-radius: 20px;
       font-weight: 700;
+      border: 1px solid white;
+      transition: all .2s ease;
+
+      &:hover {
+        background-color: #000000;
+        color: white;
+      }
     }
 
     img {
@@ -58,6 +75,15 @@
   .span {
     text-align: center;
     padding-top: 30px;
+  }
+
+  .span1 {
+    color: #c332c3;
+    margin-left: 5px;
+    transition: all .2s ease;
+    &:hover {
+      color: white;
+    }
   }
 
   @media screen and (max-width: 992px) {

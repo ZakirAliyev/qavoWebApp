@@ -1,6 +1,10 @@
 import './index.scss'
+import {useNavigate} from "react-router";
 
 function Banner() {
+
+    const navigate = useNavigate();
+
     return (
         <div className={"col-12"}>
             <section id={"banner"}>
@@ -15,7 +19,10 @@ function Banner() {
                     allowFullScreen
                 ></iframe>
                 <div className={"button"}>
-                    <button>ƏLAQƏYƏ KEÇ</button>
+                    <button onClick={() => {
+                        navigate('/contact')
+                    }}>ƏLAQƏYƏ KEÇ
+                    </button>
                 </div>
             </section>
         </div>

@@ -1,6 +1,7 @@
 import MainPage from "../pages/MainPage.jsx";
 import Home from "../pages/Home/index.jsx";
 import ContactPage from "../pages/ContactPage/index.jsx";
+import Sponsor from "../pages/Sponsor/index.jsx";
 
 export const ROUTES = [
     {
@@ -14,6 +15,10 @@ export const ROUTES = [
             {
                 path: '/contact',
                 element: <ContactPage/>
+            },
+            {
+                path: '/sponsor',
+                element: <Sponsor/>
             },
         ]
     }

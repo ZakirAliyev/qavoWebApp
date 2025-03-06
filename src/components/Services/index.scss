@@ -26,12 +26,15 @@
 
     .col-2 {
       .box {
-        background-color: white;
+        background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+        backdrop-filter: blur(10px); /* Blur the background */
+        -webkit-backdrop-filter: blur(10px); /* For Safari */
+        border-radius: 10px; /* Rounded corners */
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
         padding: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 10px;
         height: 75px;
         object-fit: cover;
         transition: all .4s ease;
@@ -43,6 +46,7 @@
           height: 100%;
           width: 100%;
           object-fit: contain;
+          filter: brightness(0) invert(1);
         }
       }
     }

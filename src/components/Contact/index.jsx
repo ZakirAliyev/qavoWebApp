@@ -1,7 +1,6 @@
 import './index.scss';
-import { FaWhatsapp } from "react-icons/fa";
+import {FaFacebook, FaWhatsapp} from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-import { SiCalendly } from "react-icons/si";
 import { useState } from "react";
 
 function Contact() {
@@ -27,7 +26,7 @@ function Contact() {
                 <h3>Bizimlə əlaqəyə keç və rəqəmsalda uğurla addımla</h3>
                 <div className="box">
                     <div className="row">
-                        {[FaWhatsapp, HiOutlineMail, SiCalendly].map((Icon, index) => (
+                        {[FaWhatsapp, HiOutlineMail, FaFacebook].map((Icon, index) => (
                             <div
                                 key={index}
                                 className={boxClasses(index)}
@@ -38,11 +37,11 @@ function Contact() {
                                     <a
                                         href={
                                             index === 0
-                                                ? 'https://wa.me/1234567890'
+                                                ? 'https://wa.me/+994102655952'
                                                 : index === 1
                                                     ? 'mailto:example@example.com'
                                                     : index === 2
-                                                        ? 'https://calendly.com/example'
+                                                        ? 'https://www.facebook.com/share/16DrUzzN8c/'
                                                         : '#'
                                         }
                                         target="_blank"
@@ -56,7 +55,7 @@ function Contact() {
                                                 : index === 1
                                                     ? 'Email'
                                                     : index === 2
-                                                        ? 'Calendly'
+                                                        ? 'Facebook'
                                                         : ''}
                                         </span>
                                     </a>

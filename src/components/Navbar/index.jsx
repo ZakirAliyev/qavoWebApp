@@ -20,11 +20,11 @@ function Navbar() {
                 <div className={"wrapper"}>
                     <FaBars className={"menu1"}/>
                     <div className={"links"}>
-                        <Link className={"link"} to={`/`}>FB</Link>
+                        <Link className={"link"} to={`https://www.facebook.com/share/16DrUzzN8c/`}>FB</Link>
                         <MiniDot/>
-                        <Link className={"link"} to={`/`}>IG</Link>
+                        <Link className={"link"} to={`https://www.instagram.com/qavoagency?igsh=aGsxcTF3eTAyYWdq `}>IG</Link>
                         <MiniDot/>
-                        <Link className={"link"} to={`/`}>IN</Link>
+                        <Link className={"link"} to={`https://www.linkedin.com/company/qavo-ageny/ `}>IN</Link>
                         <MiniDot/>
                     </div>
                     <div className={"logo"}>
